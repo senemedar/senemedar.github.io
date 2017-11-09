@@ -1,0 +1,258 @@
+@charset "UTF-8";
+/* Style the list */
+body {
+	margin: 0;
+	padding: 0;
+	background: url(../images/bg-1.jpg) fixed center no-repeat;
+	font: 1.1em Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	color: #1B7087;
+    max-height: 800px;
+}
+
+a {
+	/*	text-decoration: none; */
+	color: inherit;
+	font-style: italic;
+}
+
+h1 {
+	font: 400 normal 4em alex-brush;
+	margin-bottom: -30px;
+	text-shadow: 5px 3px 10px
+}
+
+h2 {
+	font: 400 normal 2.5em alex-brush;
+	margin-top: 0px;
+	margin-bottom: -20px;
+/*	text-shadow: 5px 3px 10px */
+}
+
+span.initial {
+	color: #B9A500;
+	font-size: 1.3em;
+	padding-bottom: 0;
+}
+
+div#header {
+	background-color: rgba(215,245,255,0.90);
+	text-align: center;
+	border-bottom: 2px solid #1B7087;
+	border-top: 2px solid #1B7087;
+	-webkit-box-shadow: 0px 0px 15px;
+	box-shadow: 0px 0px 15px;
+}
+
+div#header img#portrait {
+	border-radius: 300px;
+	border: 3px solid;
+	position: relative;
+}
+
+div#header a:hover {
+	background-color: #1B7087;
+	color: #D0E7EF;
+}
+
+div#header a:hover {
+	background-color: #1B7087;
+	color: #D0E7EF;
+}
+
+div#header a:hover img {
+	position: relative;
+	top: 5px;
+	left: 2px;
+	transform: rotate(5deg);
+}
+
+div#header h3 img {
+	position: relative;
+	top: 10px;
+}
+
+div#profile {
+	background-color: rgba(243,241,217,0.90);
+	padding: 20px;
+	border-bottom: 2px solid #8E832D;
+	border-top: 2px solid #8E832D;
+	-webkit-box-shadow: 0px 0px 15px #FFEE00;
+	box-shadow: 0px 0px 15px #FFEE00;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 40px;
+	column-count: 3;
+	column-gap: 40px;
+}
+
+div#profile img#antek-img {
+	border: 3px solid;
+	border-radius: 20px;
+	position: absolute;
+	left: 50px;
+	z-index: 1;
+	opacity: 0;
+	transition: 1.5s;
+	visibility: hidden;
+}
+div#profile .emphasise {
+	color: #B9A501;
+	font-size: 1.2em;
+}
+div#profile a:hover {
+	background-color: #B9A501;
+	color: #F1EDD5;
+}
+
+div#skills {
+	background-color: rgba(218,251,230,0.90);
+	padding: 20px;
+	border-bottom: 2px solid #2C8E3D;
+	border-top: 2px solid #2C8E3D;
+	-webkit-box-shadow: 0 0px 15px #00FF72;
+	box-shadow: 0 0px 15px #00FF72;
+}
+
+div#career-summary {
+	padding: 20px;
+	background-color: rgba(245,245,255,0.90);
+	border-bottom: 2px solid #1B7087;
+	border-top: 2px solid #1B7087;
+	-webkit-box-shadow: 0px 0px 15px;
+	box-shadow: 0px 0px 15px;
+}
+
+div.separator {
+	background: none;
+	height: 100px;
+}
+
+div.inline {
+	display: inline-block;
+}
+
+ul.tab {
+    list-style-type: none;
+    margin: 5 0;
+    padding: 0;
+    overflow: hidden;
+	border: 1px solid #B1F6C9;
+    background-color: rgba(218,251,230,0.90);
+	cursor:default;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.5s;
+    font-size: 1.3em;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+	background-color: rgba(172,246,198,0.95);
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+	background-color: rgba(172,246,198,0.90);
+}
+
+/* Style the tab content */
+div.tabcontent1 {
+	position: relative;
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+	animation: move-in 0.4s;
+}
+
+@keyframes move-in {
+	from { left: -500px; opacity: 0; }
+	to { left: 0px; opacity: 1; }
+}
+
+/* side navigation and menu button */
+div#menu_button_container {
+    display: inline-block;
+	position: fixed;
+	top: 0px;
+	left: 0;
+	transition: 0.5s;
+	background-color: rgba(0,0,0,0.35);
+	padding: 0 10px;
+	z-index: 2;
+}
+
+div#menu_button_container:hover {
+	cursor: pointer;
+	background-color: rgba(0,0,0,1.00);
+}
+
+div#menu_button_bar1, div#menu_button_bar2, div#menu_button_bar3 {
+    width: 25px;
+    height: 5px;
+    background-color: rgba(225,225,225,0.55);
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change #menu_button_bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 3px) ;
+    transform: rotate(-45deg) translate(-5px, 5px) ;
+	background-color: rgba(255,141,0,1.00);
+}
+
+/* Fade out the second bar */
+.change #menu_button_bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change #menu_button_bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+	background-color: rgba(255,141,0,1);
+}
+#menu_button_container.change {
+	background-color: rgba(0,0,0,1.00);
+}
+
+#sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+#sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+#sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+div#interests {
+    background-color: rgba(125,125,230,0.90);
+	padding: 20px;
+	border-bottom: 2px solid #2C8E3D;
+	border-top: 2px solid #2C8E3D;
+	-webkit-box-shadow: 0 0px 15px #00FF72;
+	box-shadow: 0 0px 15px #00FF72;
+}
