@@ -6,11 +6,12 @@ h1 {
     text-align: center;
     font-family: Lato;
     border-bottom: 2px solid #DDD;
+/*    visibility: hidden;*/
 
 }
 section {
-    line-height: 130%;
     border-bottom: 2px solid #DDD;
+    line-height: 160%;
 }
 
 code {
@@ -22,6 +23,44 @@ a {
     color: black;
     font-family: Lato;
     font-size: 1em;
+}
+
+ul {
+}
+
+li.heart:before {
+    list-style-image: none;
+    font-family: 'FontAwesome';
+    content: '\f004';
+    margin:0 5px 0 -15px;
+}
+
+li.tick:before {
+    list-style-image: none;
+    font-family: 'FontAwesome';
+    content: '\f00c';
+    margin:0 5px 0 -15px;
+}
+
+li.hate:before {
+    list-style-image: none;
+    font-family: 'FontAwesome';
+    content: '\f056';
+    margin:0 5px 0 -15px;
+}
+
+div.flex-container {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.flex-content {
+    width: 50%;
+}
+
+div.flex-hate {
+    justify-content: center;
 }
 
 a:hover {
@@ -36,7 +75,7 @@ span#logo {
 }
 
 div#main_container {
-    width: 980px;
+    width: 55%;
     margin: auto;
     text-align: justify;
     color: darkslategray;

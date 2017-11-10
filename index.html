@@ -4,20 +4,72 @@
         <meta charset="utf-8">
         <title>seneStudio - Homepage</title>
         <link href="https://fonts.googleapis.com/css?family=Lato:400, 400i|Dancing+Script|Roboto" rel="stylesheet">
+        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="fa/css/font-awesome.min.css">
         <link type="text/css" href="html/index.css" rel="stylesheet">
 
+        <script>
+            $( document).ready(function() {
+                blinkLogo();
+            });
+
+            nIntervId = setInterval( blinkLogo, 6000);
+
+            function blinkLogo() {
+                $( "#logo" ).effect( "pulsate", 500, "show" )
+            }
+        </script>
     </head>
 
     <body>
         <div id="main_container">
-            <h1><span id="logo">seneStudio</span> main homepage</h1>
+            <h1><span id="logo">seneStudio</span> homepage</h1>
             <section>
-                <p>Welcome to my home-page, courtesy of GitHub Student Developer Pack (thanks, guys!!)<br>
-                    This is where I teach myself things like <code>HTML</code>,<code>CSS</code>, <code>JS</code>, <code>PHP</code> and few other additional stuff, like <code>jQuery</code> and such.
+                <p>Welcome to my home-page, courtesy of <i class="fa fa-github-square"></i>GitHub Student Developer Pack (thanks, guys!!)<br>
+                    This is where I teach myself things like <code>HTML</code>, <code>CSS</code>, <code>JS</code>, <code>PHP</code> and few other additional stuff, like <code>jQuery</code> and such.
                 </p>
                 <p>
                     And in this place I will be putting some of the projects, I am currently working on, like <a href="html/cv.html">this CV page</a> for myself, to create a footprint on the Internet (because you have to start somwhere!).
                 </p>
+            </section>
+            <section>
+                <p>
+                    So, few words about myself:<br>
+                    My name is <span id="logo">Michał</span> , and I am almost forty (I know, bit late to start a new things, but who's gonna stop me?)
+                </p>
+                <div class="flex-container">
+                    <div class="flex-content">
+                       I love:
+                        <ul class="fa-ul">
+                            <li class="heart">My wife <span id="logo">Monika</span> and my son <span id="logo">Antoni</span></li>
+                            <li class="heart">Metaxa, the Greek cognac</li>
+                            <li class="heart">Programming (even though I'm still learning)</li>
+                            <li class="heart">Role Playing Games</li>
+                            <li class="heart">Stephen King's Books</li>
+                            <li class="heart">Music, especially Doom Metal and Bach. The J. S. one :)</li>
+                        </ul>
+                         ...in that particular order.
+                    </div>
+                    <div class="flex-content">
+                       I like:
+                        <ul class="fa-ul">
+                            <li class="tick">My Mac (although it's getting a bit slugginsh recently)</li>
+                            <li class="tick">My iPhone</li>
+                            <li class="tick">'Font Awesome' (because it really is awesome!)</li>
+                            <li class="tick"><span style="color: saddlebrown">Brown</span> and <span style="color: yellow">yellow</span></li>
+                        </ul>
+                         ...in no particular order.
+                    </div>
+                </div>
+                <div class="flex-container flex-hate">
+                    <div class="flex-content">
+                       I hate:
+                        <ul class="fa-ul">
+                            <li class="hate">My BT Broadband, which is supposed to be fibre-optic, and is slower than my iPhone's 4G</li>
+                            <li class="hate">Being late</li>
+                        </ul>
+                    </div>
             </section>
         </div>
     </body>
