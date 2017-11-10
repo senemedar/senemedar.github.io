@@ -1,0 +1,45 @@
+body {
+    background-color: lightgray;
+}
+
+h1 {
+    text-align: center;
+    font-family: Lato;
+    border-bottom: 2px solid #DDD;
+
+}
+section {
+    line-height: 130%;
+    border-bottom: 2px solid #DDD;
+}
+
+code {
+    color: black;
+    font-size: 120%;
+}
+
+a {
+    color: black;
+    font-family: Lato;
+    font-size: 1em;
+}
+
+a:hover {
+    background-color: darkgray;
+    color: whitesmoke;
+}
+
+span#logo {
+    font-family: 'Dancing Script';
+    font-size: 1.5em;
+    color: antiquewhite;
+}
+
+div#main_container {
+    width: 980px;
+    margin: auto;
+    text-align: justify;
+    color: darkslategray;
+    font: 16px tahoma;
+
+}
