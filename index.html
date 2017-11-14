@@ -10,27 +10,74 @@
         <link type="text/css" href="html/index.css" rel="stylesheet">
 
         <script>
+//            $(window).scroll(function(){
+////                var objectTop = $('#object').position().top;
+////                var objectHeight = $('#object').outerHeight();
+//                var windowScrollTop = $(window).scrollTop();
+//                var windowHeight = $(window).height();
+//
+////                if  (windowScrollTop  > objectTop)
+////                    $('#object').css('top', windowScrollTop );
+////                else if ((windowScrollTop+windowHeight) < (objectTop + objectHeight))
+////                    $('#object').css('top', (windowScrollTop+windowHeight) - objectHeight);
+//
+//                if (windowScrollTop >= 100) {
+//                    showElement();
+//                }
+//
+//                $('#object').html('Top: ' + windowScrollTop + 'px');
+//
+//            });
+
             $( document).ready(function() {
                 blinkLogo();
+                showMenu( 0 );
             });
 
-            nIntervId = setInterval( blinkLogo, 6000);
+            function showMenu( x ) {
+                x += 1;
+                if (x < 3) {
+                    var el = "#menu-" + x;
+//                    $( el ).fadeIn( 1000, function() { aa(x) } );
+                    $(el).animate({opacity:1}, 1000, function() { showMenu(x) });
+                }
+            }
+
+            function showElement( el1, el2 ) {
+                $( el1 ).slideDown( 600 );
+                $( el2 ).toggleClass("selected");
+
+            }
+
+            function hideElement( el ) {
+                $(el).slideUp(600);
+            }
+
+            (function loop() {
+                var rand = Math.round(Math.random() * 10000) + 5000;
+                setTimeout(function() {
+                        blinkLogo();
+                        loop();
+                }, rand);
+            }());
 
             function blinkLogo() {
                 $( "#logo" ).effect( "pulsate", 500, "show" )
             }
+
         </script>
     </head>
 
     <body>
+<!--        <div id="object" style="background-color: antiquewhite; position: sticky; top: 0px;"></div>-->
         <div id="main_container">
             <h1><span id="logo">seneStudio</span> homepage</h1>
             <section>
-                <p>Welcome to my home-page, courtesy of <i class="fa fa-github-square"></i>GitHub Student Developer Pack (thanks, guys!!)<br>
+                <p>Welcome to my home-page, courtesy of <i class="fa fa-github-square fa-lg"></i>GitHub Student Developer Pack (thanks, guys!!)<br>
                     This is where I teach myself things like <code>HTML</code>, <code>CSS</code>, <code>JS</code>, <code>PHP</code> and few other additional stuff, like <code>jQuery</code> and such.
                 </p>
                 <p>
-                    And in this place I will be putting some of the projects, I am currently working on, like <a href="html/cv.html">this CV page</a> for myself, to create a footprint on the Internet (because you have to start somwhere!).
+                    And this is where I will be putting some of my projects, like <a href="html/cv.html">this CV page</a> for myself, to create a footprint on the Internet (because you have to start somwhere!).
                 </p>
             </section>
             <section>
@@ -71,6 +118,23 @@
                         </ul>
                     </div>
             </section>
+            <nav id="top-nav">
+                <ul>
+                    <li class="menu" id="menu-1" onclick="showElement('#aboutMe', '#menu-1')">about me</li>
+                    <li class="menu" id="menu-2" onclick="hideElement('#aboutMe')">my projects</li>
+                </ul>
+            </nav>
+
+
+            <section id="aboutMe" style="display: none">
+
+                This is the next section which should not be visible straight away!<br><br><br>
+                This is lots of text which would be mainly about me and a little bit more about myself<br>
+                ...and this is some more...
+            </section>
+        <footer>
+            copyright &copy;<span id="logo">senemedar</span> 2017
+        </footer>
         </div>
     </body>
 </html>

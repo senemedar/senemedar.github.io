@@ -80,5 +80,48 @@ div#main_container {
     text-align: justify;
     color: darkslategray;
     font: 16px tahoma;
+    height: 3000px;
+}
 
+nav#top-nav {
+/*
+    position: relative;
+    left: -500px;
+*/
+    text-align: center;
+    background-color: antiquewhite;
+/*    width: 200%;*/
+}
+
+ul {
+    list-style: none;
+}
+
+li.menu {
+    display: inline-block;
+    padding: 5px 0px;
+    margin: 0px 20px;
+    opacity: 0;
+    text-decoration: underline;
+/*    visibility: hidden;*/
+}
+
+li.menu:hover {
+    cursor: pointer;
+    background-color: lightgray;
+    color: antiquewhite;
+}
+
+footer {
+    padding-top: 25px;
+}
+
+.spacer {
+    height: 100px;
+}
+
+
+.selected {
+    background-color: lightgray;
+    color: antiquewhite;
 }
