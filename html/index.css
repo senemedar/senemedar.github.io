@@ -99,7 +99,7 @@ ul {
 
 li.menu {
     display: inline-block;
-    padding: 5px 0px;
+    padding: 5px;
     margin: 0px 20px;
     opacity: 0;
     text-decoration: underline;
@@ -114,6 +114,7 @@ li.menu:hover {
 
 footer {
     padding-top: 25px;
+    text-align: right;
 }
 
 .spacer {
@@ -124,4 +125,8 @@ footer {
 .selected {
     background-color: lightgray;
     color: antiquewhite;
+}
+
+.accordion {
+    display: none;
 }

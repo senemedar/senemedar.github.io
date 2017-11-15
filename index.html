@@ -30,27 +30,36 @@
 //            });
 
             $( document).ready(function() {
-                blinkLogo();
-                showMenu( 0 );
+                blinkLogo(); // blink the logo!!
+                showMenu( 0 ); // start the bottom menu
             });
 
-            function showMenu( x ) {
+            /**
+             * Enables the visibility of the bottom menu options
+             */
+            function showMenu(x) {
                 x += 1;
                 if (x < 3) {
                     var el = "#menu-" + x;
-//                    $( el ).fadeIn( 1000, function() { aa(x) } );
+//                    $(el).fadeIn( 1000, function() { aa(x) } );
                     $(el).animate({opacity:1}, 1000, function() { showMenu(x) });
                 }
             }
 
+            /**
+             * shows the bottom menu elements (el1) in a form of (almost) accordion
+             * while selecting the relevant menu option (el2)
+             */
             function showElement( el1, el2 ) {
+                $("section.accordion").each(function() {
+                    if ($( this ).css( "display" ) != "none") {
+                        $( this ).slideUp( 600 );
+                    }
+                });
+                $( ".menu").filter(".selected").removeClass("selected");
                 $( el1 ).slideDown( 600 );
-                $( el2 ).toggleClass("selected");
+                $( el2 ).addClass( "selected" );
 
-            }
-
-            function hideElement( el ) {
-                $(el).slideUp(600);
             }
 
             (function loop() {
@@ -121,12 +130,21 @@
             <nav id="top-nav">
                 <ul>
                     <li class="menu" id="menu-1" onclick="showElement('#aboutMe', '#menu-1')">about me</li>
-                    <li class="menu" id="menu-2" onclick="hideElement('#aboutMe')">my projects</li>
+                    <li class="menu" id="menu-2" onclick="showElement('#myProjects', '#menu-2')">my projects</li>
+                    <li class="menu" id="menu-3" onclick="showElement('nothing', 'nothing')">hide 'em all!</li>
                 </ul>
             </nav>
 
 
-            <section id="aboutMe" style="display: none">
+            <section id="aboutMe" class="accordion">
+                This is ABOUT ME section<br>
+
+                This is the next section which should not be visible straight away!<br><br><br>
+                This is lots of text which would be mainly about me and a little bit more about myself<br>
+                ...and this is some more...
+            </section>
+            <section id="myProjects" class="accordion">
+                This is the MY PROJECTS section.<br>
 
                 This is the next section which should not be visible straight away!<br><br><br>
                 This is lots of text which would be mainly about me and a little bit more about myself<br>
