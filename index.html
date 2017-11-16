@@ -131,7 +131,6 @@
                 <ul>
                     <li class="menu" id="menu-1" onclick="showElement('#aboutMe', '#menu-1')">about me</li>
                     <li class="menu" id="menu-2" onclick="showElement('#myProjects', '#menu-2')">my projects</li>
-                    <li class="menu" id="menu-3" onclick="showElement('nothing', 'nothing')">hide 'em all!</li>
                 </ul>
             </nav>
 
@@ -142,13 +141,27 @@
                 This is the next section which should not be visible straight away!<br><br><br>
                 This is lots of text which would be mainly about me and a little bit more about myself<br>
                 ...and this is some more...
+                <div class="close"><a onclick="showElement('nothing', 'nothing')">close (X)</a></div>
             </section>
             <section id="myProjects" class="accordion">
-                This is the MY PROJECTS section.<br>
-
-                This is the next section which should not be visible straight away!<br><br><br>
-                This is lots of text which would be mainly about me and a little bit more about myself<br>
-                ...and this is some more...
+                <p>
+                    This will be the place, where I shine. My <code>portfolio</code>, if you like.<br>
+                    Will be, as there is not much to shout about yet.
+                </p>
+                <p>
+                    But in the so-called meantime, feel free to browse over my "achievements" - which are:
+<!--
+                    <ul>
+                        <li><a href="https://github.com/senemedar/senemedar.github.io"><i class="fa fa-chevron-right"> </i> THIS VERY WEBSITE</a></li>
+                    </ul>
+-->
+                </p>
+                <div class="flex-container">
+                    <div class="flex-link"><a href="https://github.com/senemedar/senemedar.github.io">this very website</a></div>
+                    <div class="flex-insert"><i class="fa fa-cogs"></i></div>
+                    <div>Which is as much about showing off, as about learning stuff. The <span id="logo">stuff</span> is in this case: HTML5, CSS3, jQuery and JS. And a bit about colours, and what I like and dis-like...</div>
+                </div>
+                <div class="close"><a onclick="showElement('nothing', 'nothing')">close (X)</a></div>
             </section>
         <footer>
             copyright &copy;<span id="logo">senemedar</span> 2017

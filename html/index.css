@@ -2,6 +2,30 @@ body {
     background-color: lightgray;
 }
 
+div#main_container {
+    width: 55%;
+    margin: auto;
+    text-align: justify;
+    color: darkslategray;
+    font: 16px tahoma;
+    height: 3000px;
+}
+
+div.flex-container {
+    display: flex;
+}
+
+div.flex-link {
+    width: 200px;
+    align-self: center;
+    text-align: right
+}
+
+div.flex-insert {
+    padding: 0px 20px;
+    align-self: center;
+}
+
 h1 {
     text-align: center;
     font-family: Lato;
@@ -49,6 +73,13 @@ li.hate:before {
     margin:0 5px 0 -15px;
 }
 
+li.chevron:before {
+    list-style-image: none;
+    font-family: 'FontAwesome';
+    content: '\f054';
+    margin:0 5px 0 -15px;
+}
+
 div.flex-container {
     padding-top: 15px;
     display: flex;
@@ -72,15 +103,6 @@ span#logo {
     font-family: 'Dancing Script';
     font-size: 1.5em;
     color: antiquewhite;
-}
-
-div#main_container {
-    width: 55%;
-    margin: auto;
-    text-align: justify;
-    color: darkslategray;
-    font: 16px tahoma;
-    height: 3000px;
 }
 
 nav#top-nav {
@@ -129,4 +151,12 @@ footer {
 
 .accordion {
     display: none;
+}
+
+.close {
+    text-align: right;
+}
+
+.close:hover {
+    cursor: pointer;
 }
