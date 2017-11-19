@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <title>seneStudio - Homepage</title>
         <link href="https://fonts.googleapis.com/css?family=Lato:400, 400i|Dancing+Script|Roboto" rel="stylesheet">
-        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="fa/css/font-awesome.min.css">
         <link type="text/css" href="html/index.css" rel="stylesheet">
 
@@ -41,7 +41,6 @@
                 x += 1;
                 if (x < 3) {
                     var el = "#menu-" + x;
-//                    $(el).fadeIn( 1000, function() { aa(x) } );
                     $(el).animate({opacity:1}, 1000, function() { showMenu(x) });
                 }
             }
@@ -95,6 +94,7 @@
                     My name is <span id="logo">Michał</span> , and I am almost forty (I know, bit late to start a new things, but who's gonna stop me?)
                 </p>
                 <div class="flex-container">
+                    <!-- ####### I love those things ... -->
                     <div class="flex-content">
                        I love:
                         <ul class="fa-ul">
@@ -103,10 +103,12 @@
                             <li class="heart">Programming (even though I'm still learning)</li>
                             <li class="heart">Role Playing Games</li>
                             <li class="heart">Stephen King's Books</li>
+                            <li class="heart"><a href="https://www.chess.com/member/senemedar">Chess</a></li>
                             <li class="heart">Music, especially Doom Metal and Bach. The J. S. one :)</li>
                         </ul>
                          ...in that particular order.
                     </div>
+                    <!-- ####### I like those things ... -->
                     <div class="flex-content">
                        I like:
                         <ul class="fa-ul">
@@ -118,7 +120,9 @@
                          ...in no particular order.
                     </div>
                 </div>
+                <!-- ####### the website -->
                 <div class="flex-container flex-hate">
+                    <!-- ####### I hate those things ... -->
                     <div class="flex-content">
                        I hate:
                         <ul class="fa-ul">
@@ -127,6 +131,8 @@
                         </ul>
                     </div>
             </section>
+
+            <!-- ###### the menu -->
             <nav id="top-nav">
                 <ul>
                     <li class="menu" id="menu-1" onclick="showElement('#aboutMe', '#menu-1')">about me</li>
@@ -134,35 +140,70 @@
                 </ul>
             </nav>
 
-
+            <!-- ###### the About Me section -->
             <section id="aboutMe" class="accordion">
-                This is ABOUT ME section<br>
-
-                This is the next section which should not be visible straight away!<br><br><br>
-                This is lots of text which would be mainly about me and a little bit more about myself<br>
-                ...and this is some more...
-                <div class="close"><a onclick="showElement('nothing', 'nothing')">close (X)</a></div>
+                <p>
+                    I am trying to rekindle my life-long interest in programming, this time (still-- hopefully) backed up by an actual <strong>BSc</strong> degree in <strong>Software Development</strong> from <a href="http://open.ac.uk">Open University</a>. My first and forever love was to write software, but - as it usually happens - the life had wrote other plans, and I became an Test Engineer. Well...
+                </p>
+                <p>
+                    What I (think I) know at the moment are:
+                    <ul  class="fa-ul two-columns">
+                        <li class="check">HTML</li>
+                        <li class="check">CSS</li>
+                        <li class="check">JS</li>
+                        <li class="check">jQuery</li>
+                        <li class="check">PHP</li>
+                        <li class="check">PosgtreSQL</li>
+                    </ul>
+                    ...although I am constantly proven wrong :)<br>
+                    Still, those are the thing I'm getting pretty confident in now, but (as always) there's still pretty much to learn on those.<br>
+                    I keep writing a little snippets here and there, trying to code in my free time, doing some projects to keep my skills expanding. For now, the list above is my main focus, but the list is not complete, as there is more in line, waiting to be learned:
+                    <ul>
+                        <li>Electron - a pretty clever HTML/JS framework I stumbled upon</li>
+                        <li>Java - need to revisit this one, as it was of the University's big things!</li>
+                        <li>Python - supposedly the next Big Thing in programming, so it should probably go before Java...</li>
+                    </ul>
+                    Those are the items I have already dabbled in, but there is still a LOT to learn.<br>
+                    But more importantly, I am yet to <strong>finish</strong> any of my little projects, so there is a lot to keep me going.
+                </p>
+                <!-- ### close the panel -->
+                <div class="close"><a onclick="showElement('nothing', 'nothing')">close <i class="fa fa-times-circle"></i> panel</a></div>
             </section>
+
+            <!-- ###### the My Projects section -->
             <section id="myProjects" class="accordion">
                 <p>
                     This will be the place, where I shine. My <code>portfolio</code>, if you like.<br>
-                    Will be, as there is not much to shout about yet.
+                    ...will be, as there is not much to shout about yet.
                 </p>
                 <p>
                     But in the so-called meantime, feel free to browse over my "achievements" - which are:
-<!--
-                    <ul>
-                        <li><a href="https://github.com/senemedar/senemedar.github.io"><i class="fa fa-chevron-right"> </i> THIS VERY WEBSITE</a></li>
-                    </ul>
--->
                 </p>
-                <div class="flex-container">
-                    <div class="flex-link"><a href="https://github.com/senemedar/senemedar.github.io">this very website</a></div>
-                    <div class="flex-insert"><i class="fa fa-cogs"></i></div>
-                    <div>Which is as much about showing off, as about learning stuff. The <span id="logo">stuff</span> is in this case: HTML5, CSS3, jQuery and JS. And a bit about colours, and what I like and dis-like...</div>
+
+                <!-- ####### the website ###### -->
+                <div class="panel-container">
+                    <div class="panel-link"><a href="https://github.com/senemedar/senemedar.github.io">this very website</a></div>
+                    <div class="panel-insert"><i class="fa fa-cogs"></i></div>
+                    <div class="panel-description">
+                        Which is as much about showing off, as about learning stuff. The <span id="logo">stuff</span> is in this case:
+                        <code>HTML5</code>,<code> CSS3</code>,<code> jQuery</code> and<code> JS</code>. And a bit about colours, and what I like and dis-like...
+                    </div>
                 </div>
-                <div class="close"><a onclick="showElement('nothing', 'nothing')">close (X)</a></div>
+                <hr>
+                <!-- ####### home budget ###### -->
+                <div class="panel-container">
+                    <div class="panel-link"><a href="https://github.com/senemedar/HomeBudget">home budget</a></div>
+                    <div class="panel-insert"><i class="fa fa-cogs"></i></div>
+                    <div class="panel-description">
+                        A little project created for myself, to help manage my home budget. PostgreSQL database version.<br>
+                        Coded in <code>HTML/CSS/PHP</code>. Still learning.
+                    </div>
+                </div>
+                <!-- ### close the panel -->
+                <div class="close"><a onclick="showElement('nothing', 'nothing')">close <i class="fa fa-times-circle"></i> panel</a></div>
             </section>
+
+        <!-- ###### the footer -->
         <footer>
             copyright &copy;<span id="logo">senemedar</span> 2017
         </footer>
