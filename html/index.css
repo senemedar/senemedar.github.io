@@ -72,6 +72,13 @@ li.tick:before {
     margin:0 5px 0 -15px;
 }
 
+li.book:before {
+    list-style-image: none;
+    font-family: 'FontAwesome';
+    content: '\f02d';
+    margin:0 5px 0 -15px;
+}
+
 li.hate:before {
     list-style-image: none;
     font-family: 'FontAwesome';
