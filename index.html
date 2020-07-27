@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>seneStudio - Homepage</title>
@@ -32,7 +32,7 @@
              */
             function showElement( el1, el2 ) {
                 $("section.accordion").each(function() {
-                    if ($( this ).css( "display" ) != "none") {
+                    if ($( this ).css( "display" ) !== "none") {
                         $( this ).slideUp( 600 );
                     }
                 });
@@ -51,7 +51,7 @@
             }());
 
             function blinkLogo() {
-                $( "#logo" ).effect( "pulsate", 500, "show" )
+                $( ".logo" ).effect( "pulsate", 500, "show" )
             }
 
         </script>
@@ -60,7 +60,7 @@
     <body>
 <!--        <div id="object" style="background-color: antiquewhite; position: sticky; top: 0px;"></div>-->
         <div id="main_container">
-            <h1>home of <span id="logo">senemedar</span></h1>
+            <h1>home of <span class="logo">senemedar</span></h1>
             <section>
                 <p>Welcome to my home-page, courtesy of <i class="fa fa-github-square fa-lg"></i>GitHub Student Developer Pack (thanks, guys!!)<br>
                     This is where I teach myself things like <code>HTML</code>, <code>CSS</code>, <code>JS</code>, <code>PHP</code> and few other additional stuff, like <code>jQuery</code> and such.
@@ -72,20 +72,20 @@
             <section>
                 <p>
                     So, few words about myself:<br>
-                    My name is <span id="logo">Michał</span> , and I am almost forty (I know, bit late to start a new things, but who's gonna stop me?)
+                    My name is <span class="logo">Michał</span> , and I am 42 (apparently, it is never too late to start a new things!)
                 </p>
                 <div class="flex-container">
                     <!-- ####### I love those things ... -->
                     <div class="flex-content">
                        I love:
                         <ul class="fa-ul">
-                            <li class="heart">My wife <span id="logo">Monika</span> and my son <span id="logo">Antoni</span></li>
+                            <li class="heart">My wife <span class="logo">Monika</span> and my son <span class="logo">Antoni</span></li>
                             <li class="heart">Metaxa, the Greek cognac</li>
                             <li class="heart">Programming (even though I'm still learning)</li>
+                            <li class="heart"><a href="https://www.chess.com/member/senemedar">Chess</a></li>
                             <li class="heart">Role Playing Games</li>
                             <li class="heart">Stephen King's Books</li>
-                            <li class="heart"><a href="https://www.chess.com/member/senemedar">Chess</a></li>
-                            <li class="heart">Music, especially Doom Metal and Bach. The J. S. one :)</li>
+                            <li class="heart">Music, especially Heavy Metal and Bach. The J. S. one :)</li>
                         </ul>
                          ...in that particular order.
                     </div>
@@ -95,7 +95,7 @@
                         <ul class="fa-ul">
                             <li class="tick">My Mac (although it's getting a bit slugginsh recently)</li>
                             <li class="tick">My iPhone</li>
-                            <li class="tick">'Font Awesome' (because it really is awesome!)</li>
+                            <li class="tick"><a href="https://fontawesome.com/">Font Awesome</a> (because it really is awesome!)</li>
                             <li class="tick"><span style="color: saddlebrown">Brown</span> and <span style="color: yellow">yellow</span></li>
                         </ul>
                          ...in no particular order.
@@ -111,6 +111,7 @@
                             <li class="hate">Being late</li>
                         </ul>
                     </div>
+                </div>
             </section>
 
             <!-- ###### the menu -->
@@ -124,29 +125,32 @@
             <!-- ###### the About Me section -->
             <section id="aboutMe" class="accordion">
                 <p>
-                    I am trying to rekindle my life-long interest in programming, this time (still-- hopefully) backed up by an actual <strong>BSc</strong> degree in <strong>Software Development</strong> from <a href="http://open.ac.uk">Open University</a>. My first and forever love was to write software, but - as it usually happens - the life had wrote other plans, and I became an Test Engineer. Well...
+                    I am trying to rekindle my life-long interest in programming, this time (still-- hopefully) backed up by an actual <strong>BSc</strong> degree in <strong>Software Development</strong> from <a href="http://open.ac.uk">Open University</a>.
+                    My first and forever love was to write software, but - as it usually happens - the life had wrote other plans, and I became an Test Engineer. Well...
                 </p>
                 <p>
-                    What I (think I) know at the moment are:
+                    What I (think I) know at the moment are (...although I am constantly proven wrong!):
                     <ul  class="fa-ul two-columns">
                         <li class="check">HTML</li>
                         <li class="check">CSS</li>
-                        <li class="check">JS</li>
-                        <li class="check">jQuery</li>
-                        <li class="check">PHP</li>
-                        <li class="check">PosgtreSQL</li>
+                        <li class="check" >JavaScript</li>
+                        <li class="check" >Python</li>
+                        <li class="not-check">jQuery</li>
+                        <li class="not-check">PHP</li>
+                        <li class="not-check">MySQL and PosgtreSQL</li>
                     </ul>
-                    ...although I am constantly proven wrong :)<br>
+                    (<i class="fa fa-times-circle"></i> those I need to refresh, as unused knowledge is often forgotten)<br>
                     Still, those are the thing I'm getting pretty confident in now, but (as always) there's still pretty much to learn on those.<br>
-                    I keep writing a little snippets here and there, trying to code in my free time, doing some projects to keep my skills expanding. For now, the list above is my main focus, but the list is not complete, as there is more in line, waiting to be learned:
+                    I keep writing a little snippets here and there, trying to code in my free time, doing some projects to keep my skills expanding.
+                    For now, the list above is my main focus, but the list is not complete, as there is more in line, waiting to be learned:
                     <ul  class="fa-ul">
                         <li class="book">Electron - a pretty clever HTML/JS framework I stumbled upon</li>
-                        <li class="book">Java - need to revisit this one, as it was of the University's big things!</li>
+                        <li class="book">Java - need to revisit this one, as it was on the University's big things!</li>
                         <li class="book">Python - supposedly the next Big Thing in programming, so it should probably go before Java...</li>
                     </ul>
                     Those are the items I have already dabbled in, but there is still a LOT to learn.<br>
                     But more importantly, I am yet to <strong>finish</strong> any of my little projects, so there is a lot to keep me going.
-                </p>
+<!--                </p>-->
                 <!-- ### close the panel -->
                 <div class="close"><a onclick="showElement('nothing', 'nothing')">close <i class="fa fa-times-circle"></i> panel</a></div>
             </section>
@@ -166,7 +170,7 @@
                     <div class="panel-link"><a href="https://github.com/senemedar/senemedar.github.io">this very website</a></div>
                     <div class="panel-insert"><i class="fa fa-cogs"></i></div>
                     <div class="panel-description">
-                        Which is as much about showing off, as about learning stuff. The <span id="logo">stuff</span> is in this case:
+                        Which is as much about showing off, as about learning stuff. The <span class="logo">stuff</span> is in this case:
                         <code>HTML5</code>,<code> CSS3</code>,<code> jQuery</code> and<code> JS</code>. And a bit about colours, and what I like and dis-like...
                     </div>
                 </div>
@@ -195,7 +199,7 @@
 
         <!-- ###### the footer -->
         <footer>
-            copyright &copy;<span id="logo">senemedar</span> 2017 - 2020
+            copyright &copy;<span class="logo">senemedar</span> 2017 - 2020
         </footer>
         </div>
     </body>

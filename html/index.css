@@ -93,6 +93,16 @@ li.check:before {
     margin:0 5px;
 }
 
+li.not-check:before {
+    list-style-image: none;
+    font-family: 'FontAwesome';
+    content: '\f057';
+    margin:0 5px;
+}
+li.not-check {
+    text-decoration: line-through;
+}
+
 li.chevron:before {
     list-style-image: none;
     font-family: 'FontAwesome';
@@ -119,7 +129,7 @@ a:hover {
     color: whitesmoke;
 }
 
-span#logo {
+span.logo {
     font-family: 'Dancing Script';
     font-size: 1.5em;
     color: antiquewhite;
@@ -142,7 +152,7 @@ ul {
 li.menu {
     display: inline-block;
     padding: 5px;
-    margin: 0px 20px;
+    margin: 0 20px;
     opacity: 0;
     text-decoration: underline;
         transition-duration: 0.7s;
