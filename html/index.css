@@ -36,6 +36,7 @@ h1 {
     text-align: center;
     font-family: Lato;
     border-bottom: 2px solid #DDD;
+    background-color: antiquewhite;
 /*    visibility: hidden;*/
 
 }
@@ -132,7 +133,8 @@ a:hover {
 span.logo {
     font-family: 'Dancing Script';
     font-size: 1.5em;
-    color: antiquewhite;
+    /*color: antiquewhite;*/
+    color: black;
 }
 
 nav#top-nav {
