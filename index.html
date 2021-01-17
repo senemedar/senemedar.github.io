@@ -20,8 +20,8 @@
              */
             function showMenu(x) {
                 x += 1;
-                if (x < 3) {
-                    var el = "#menu-" + x;
+                if (x < 4) {
+                    let el = "#menu-" + x;
                     $(el).animate({opacity:1}, 1000, function() { showMenu(x) });
                 }
             }
@@ -31,15 +31,18 @@
              * while selecting the relevant menu option (el2)
              */
             function showElement( el1, el2 ) {
-                $("section.accordion").each(function() {
-                    if ($( this ).css( "display" ) !== "none") {
-                        $( this ).slideUp( 600 );
-                    }
-                });
-                $( ".menu").filter(".selected").removeClass("selected");
-                $( el1 ).slideDown( 600 );
-                $( el2 ).addClass( "selected" );
-
+                if ($(el2).hasClass("selected")) {
+                    showElement('nothing', 'nothing')
+                } else {
+                    $("section.accordion").each(function () {
+                        if ($(this).css("display") !== "none") {
+                            $(this).slideUp(600);
+                        }
+                    });
+                    $(".menu").filter(".selected").removeClass("selected");
+                    $(el1).slideDown(600);
+                    $(el2).addClass("selected");
+                }
             }
 
             (function loop() {
@@ -71,7 +74,7 @@
             </section>
             <section>
                 <p>
-                    So, few words about myself:<br>
+                    So, a few words about myself:<br>
                     My name is <span class="logo">Michał</span> , and I am 42 (apparently, it is never too late to start a new things!)
                 </p>
                 <div class="flex-container">
@@ -80,10 +83,10 @@
                        I love:
                         <ul class="fa-ul">
                             <li class="heart">My wife <span class="logo">Monika</span> and my son <span class="logo">Antoni</span></li>
-                            <li class="heart">Metaxa, the Greek cognac</li>
-                            <li class="heart">Programming (even though I'm still learning)</li>
-                            <li class="heart"><a href="https://www.chess.com/member/senemedar">Chess</a></li>
-                            <li class="heart">Role Playing Games</li>
+                            <li class="heart"><span class="logo">Metaxa</span>, the Greek cognac</li>
+                            <li class="heart">Programming (even though I'm still learning)...</li>
+                            <li class="heart">...on my <a href="https://elementary.io/">Linux</a> laptop</li>
+                            <li class="heart">Playing <a href="https://www.chess.com/member/senemedar">chess</a></li>
                             <li class="heart">Stephen King's Books</li>
                             <li class="heart">Music, especially Heavy Metal and Bach. The J. S. one :)</li>
                         </ul>
@@ -94,7 +97,7 @@
                        I like:
                         <ul class="fa-ul">
                             <li class="tick"><span style="text-decoration: line-through">My Mac (although it's getting a bit slugginsh recently)</span>RIP</li>
-                            <li class="tick">My <a href="https://elementary.io/">Linux</a> laptop</li>
+                            <li class="tick">Role Playing Games</li>
                             <li class="tick">My iPhone</li>
                             <li class="tick"><a href="https://fontawesome.com/">Font Awesome</a> (because it really is awesome!)</li>
                             <li class="tick"><span style="color: black">BLACK</span> and <span style="color: yellow">YELLOW</span></li>
@@ -117,11 +120,12 @@
                 </div>
             </section>
 
-            <!-- ###### the menu -->
+            <!-- ###### the navigation -->
             <nav id="top-nav">
                 <ul>
                     <li class="menu" id="menu-1" onclick="showElement('#aboutMe', '#menu-1')">about me</li>
                     <li class="menu" id="menu-2" onclick="showElement('#myProjects', '#menu-2')">my projects</li>
+                    <li class="menu" id="menu-3" onclick="showElement('#links', '#menu-3')">links</li>
                 </ul>
             </nav>
 
@@ -130,31 +134,37 @@
                 <p>
                     I am trying to rekindle my life-long interest in programming, this time backed up by an actual degree in <strong>Software Development</strong> from <a href="http://open.ac.uk">Open University</a>
                     (Bachelor's Degree - BSc (with honours) in Software Engineering.<br>
-                    My first and forever love was to write software, but - as it usually happens - the life had wrote other plans, and I became an Test Engineer. Well...<br>
-                    As for now, I am attending a Boot-camp organised by SDA (Software Development Academy)
+                    My first and forever love was to write software, but - as it usually happens - the life wrote other plans, and I became a Test Engineer. Well...<br>
+                    As for now, I am attending a Boot-camp organised by SDA (Software Development Academy) to remind myself some Java and to learn a few new things!
                 </p>
                 <p>
                     What I (think I) know at the moment are (...although I am constantly proven wrong!):
-                    <ul  class="fa-ul two-columns">
-                        <li class="check">Java</li>
-                        <li class="check">HTML</li>
-                        <li class="check">CSS</li>
-                        <li class="check" >JavaScript</li>
-                        <li class="check" >Python</li>
-                        <li class="not-check">jQuery</li>
-                    </ul>
-                    (<i class="fa fa-times-circle"></i> those I need to refresh, as unused knowledge is often forgotten)<br>
-                    Still, those are the thing I'm getting pretty confident in now, but (as always) there's still pretty much to learn on those.<br>
-                    I keep writing a little snippets here and there, trying to code in my free time, doing some projects to keep my skills expanding.
-                    For now, the list above is my main focus, but the list is not complete, as there is more in line, so I need to keep practising:
-                    <ul  class="fa-ul">
-                        <li class="book">Hibernate</li>
-                        <li class="book">PHP</li>
-                        <li class="book">MySQL and PosgtreSQL</li>
-                    </ul>
-                    Those are the items I have already dabbled in, but there is still a LOT to learn.<br>
+                </p>
+                <ul  class="fa-ul two-columns">
+                    <li class="check">Java</li>
+                    <li class="check">HTML</li>
+                    <li class="check">CSS</li>
+                    <li class="check">JavaScript</li>
+                    <li class="check">jQuery</li>
+                    <li class="check">Python</li>
+                    <li class="check">PHP</li>
+                </ul>
+
+                (<i class="fa fa-times-circle"></i> those I need to refresh, as unused knowledge is often forgotten)<br>
+                Still, those are the thing I'm getting pretty confident in now, but (as always) there's still pretty much to learn on those.<br>
+                I keep writing a little snippets here and there, trying to code in my free time, doing some projects to keep my skills expanding.
+                For now, the list above is my main focus, but the list is not complete, as there is more in line, so I need to keep practising:
+
+                <ul  class="fa-ul">
+                    <li class="book">Hibernate</li>
+                    <li class="book">MySQL and PosgtreSQL</li>
+                    <li class="book">Selenium</li>
+                    <li class="book">Spring</li>
+                </ul>
+                <p>
+                    Those are all the items I have already dabbled in, but there is still a LOT to learn.<br>
                     But more importantly, I am yet to <strong>finish</strong> any of my little projects, so there is a lot to keep me going.
-<!--                </p>-->
+                </p>
                 <!-- ### close the panel -->
                 <div class="close"><a onclick="showElement('nothing', 'nothing')">close <i class="fa fa-times-circle"></i> panel</a></div>
             </section>
@@ -162,16 +172,15 @@
             <!-- ###### the My Projects section -->
             <section id="myProjects" class="accordion">
                 <p>
-                    This will be the place, where I shine. My <code>portfolio</code>, if you like.<br>
-                    ...will be, as there is not much to shout about yet.
+                    This is the place, where I shine. My <code>portfolio</code>, if you like.<br>
+                    ...or it will be, as there is not much to shout about, yet. But feel free to poke around, and I can only hope you'll find something of interest.
                 </p>
-                <p>
-                    But in the so-called meantime, feel free to browse over my "achievements" - which are:
-                </p>
-
                 <!-- ####### the website ###### -->
                 <div class="panel-container">
-                    <div class="panel-link"><a href="https://github.com/senemedar/senemedar.github.io">this very website</a></div>
+                    <div class="panel-link">
+                        <i class="fa fa-github-square fa-lg"></i>
+                        <a href="https://github.com/senemedar/senemedar.github.io">this very website</a>
+                    </div>
                     <div class="panel-insert"><i class="fa fa-cogs"></i></div>
                     <div class="panel-description">
                         Which is as much about showing off, as about learning stuff. The <span class="logo">stuff</span> is in this case:
@@ -181,13 +190,56 @@
                 <hr>
                 <!-- ####### home budget ###### -->
                 <div class="panel-container">
-                    <div class="panel-link"><a href="https://github.com/senemedar/HomeBudget">home budget</a></div>
+                    <div class="panel-link">
+                        <i class="fa fa-github-square fa-lg"></i>
+                        <a href="https://github.com/senemedar/HomeBudget">home budget</a>
+                    </div>
                     <div class="panel-insert"><i class="fa fa-cogs"></i></div>
                     <div class="panel-description">
                         A little project created for myself, to help manage my home budget. PostgreSQL database version.<br>
                         Coded in <code>HTML/CSS/PHP</code>. Still learning.
                     </div>
                 </div>
+                <!-- ### close the panel -->
+                <div class="close"><a onclick="showElement('nothing', 'nothing')">close <i class="fa fa-times-circle"></i> panel</a></div>
+            </section>
+
+            <!-- ###### the Links section -->
+            <section id="links" class="accordion">
+                <p>
+                    Places on the internet related to me, and places I find interesting:
+                </p>
+
+                <div class="panel-container">
+                    <div class="panel-link">
+                        <a href="https://github.com/senemedar/">My GitHub place</a>
+                    </div>
+                    <div class="panel-insert"><i class="fa fa-github-square fa-lg"></i></div>
+                    <div class="panel-description">
+                        Repository for all my projects big and small - even the ones that are not listed here.
+                    </div>
+                </div>
+
+                <div class="panel-container">
+                    <div class="panel-link">
+                        <a href="https://www.linkedin.com/in/mpielacha/">My LinkedIn profile</a>
+                    </div>
+                    <div class="panel-insert"><i class="fa fa-linkedin-square fa-lg"></i></div>
+                    <div class="panel-description">
+                        LinkedIn pages for myself. I try my best to keep them updated.
+                    </div>
+                </div>
+
+                <div class="panel-container">
+                    <div class="panel-link">
+                        <a href="https://programistaniespelniony.wordpress.com/">My personal blog</a>
+                    </div>
+                    <div class="panel-insert"><i class="fa fa-wordpress fa-lg"></i></div>
+                    <div class="panel-description">
+                        WordPress pages where I try to write about the programming-related topics. Or Linux. Or both...
+                    </div>
+                </div>
+
                 <!-- ### close the panel -->
                 <div class="close"><a onclick="showElement('nothing', 'nothing')">close <i class="fa fa-times-circle"></i> panel</a></div>
             </section>

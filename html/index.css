@@ -8,7 +8,8 @@ div#main_container {
     text-align: justify;
     color: darkslategray;
     font: 16px tahoma;
-    height: 3000px;
+    border: antiquewhite solid 2px;
+    /*height: 3000px;*/
 }
 
 div.panel-container {
@@ -34,69 +35,67 @@ div.panel-description {
 
 h1 {
     text-align: center;
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     border-bottom: 2px solid #DDD;
     background-color: antiquewhite;
-/*    visibility: hidden;*/
-
+    margin-top: 0;
 }
+
 section {
-    border-bottom: 2px solid #DDD;
     line-height: 160%;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 code {
     color: black;
-    font-size: 120%;
+    font-size: 80%;
 }
 
 a {
     color: black;
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 1em;
-}
-
-ul {
 }
 
 li.heart:before {
     list-style-image: none;
-    font-family: 'FontAwesome';
+    font-family: 'FontAwesome', serif;
     content: '\f004';
     margin:0 5px 0 -15px;
 }
 
 li.tick:before {
     list-style-image: none;
-    font-family: 'FontAwesome';
+    font-family: 'FontAwesome', serif;
     content: '\f00c';
     margin:0 5px 0 -15px;
 }
 
 li.book:before {
     list-style-image: none;
-    font-family: 'FontAwesome';
+    font-family: 'FontAwesome', serif;
     content: '\f02d';
     margin:0 5px 0 -15px;
 }
 
 li.hate:before {
     list-style-image: none;
-    font-family: 'FontAwesome';
+    font-family: 'FontAwesome', serif;
     content: '\f056';
     margin:0 5px 0 -15px;
 }
 
 li.check:before {
     list-style-image: none;
-    font-family: 'FontAwesome';
+    font-family: 'FontAwesome', serif;
     content: '\f05d';
     margin:0 5px;
 }
 
 li.not-check:before {
     list-style-image: none;
-    font-family: 'FontAwesome';
+    font-family: 'FontAwesome', serif;
     content: '\f057';
     margin:0 5px;
 }
@@ -106,13 +105,13 @@ li.not-check {
 
 li.chevron:before {
     list-style-image: none;
-    font-family: 'FontAwesome';
+    font-family: 'FontAwesome', serif;
     content: '\f054';
     margin:0 5px 0 -15px;
 }
 
 div.flex-container {
-    padding-top: 15px;
+    padding: 5px;
     display: flex;
     justify-content: space-between;
 }
@@ -131,24 +130,23 @@ a:hover {
 }
 
 span.logo {
-    font-family: 'Dancing Script';
+    font-family: 'Dancing Script', fantasy;
     font-size: 1.5em;
     /*color: antiquewhite;*/
     color: black;
 }
 
 nav#top-nav {
-/*
-    position: relative;
-    left: -500px;
-*/
     text-align: center;
     background-color: antiquewhite;
-/*    width: 200%;*/
 }
 
 ul {
     list-style: none;
+}
+
+li {
+    text-align: left;
 }
 
 li.menu {
@@ -168,9 +166,18 @@ li.menu:hover {
     transition-duration: 0.3s;
 }
 
+hr {
+    width: 35%;
+    color: antiquewhite;
+    background-color: antiquewhite;
+    border: none;
+    height: 1px;
+}
+
 footer {
-    padding-top: 25px;
+    /*padding-top: 25px;*/
     text-align: right;
+    background-color: antiquewhite;
 }
 
 .spacer {
@@ -188,7 +195,14 @@ footer {
 }
 
 .close {
-    text-align: right;
+    text-align: center;
+}
+
+.close {
+}
+
+.close {
+    border-bottom: solid 5px antiquewhite;
 }
 
 .close:hover {
