@@ -1,262 +1,290 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>seneStudio - Homepage</title>
-        <link href="https://fonts.googleapis.com/css?family=Lato:400, 400i|Dancing+Script|Roboto" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <link rel="stylesheet" href="fa/css/font-awesome.min.css">
-        <link type="text/css" href="html/index.css" rel="stylesheet">
+<head>
+    <meta charset="utf-8">
+    <title>seneStudio - Homepage</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400, 400i|Dancing+Script|Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="fa/css/font-awesome.min.css">
+    <link type="text/css" href="html/index.css" rel="stylesheet">
 
-        <script>
-            $( document).ready(function() {
-                blinkLogo(); // blink the logo!!
-                showMenu( 0 ); // start the bottom menu
-            });
+    <script>
+        $(document).ready(function () {
+            blinkLogo(); // blink the logo!!
+            showMenu(0); // start the bottom menu
+        });
 
-            /**
-             * Enables the visibility of the bottom menu options
-             */
-            function showMenu(x) {
-                x += 1;
-                if (x < 4) {
-                    let el = "#menu-" + x;
-                    $(el).animate({opacity:1}, 1000, function() { showMenu(x) });
-                }
+        /**
+         * Enables the visibility of the bottom menu options
+         */
+        function showMenu(x) {
+            x += 1;
+            if (x < 4) {
+                let el = ".menu-" + x;
+                $(el).animate({opacity: 1}, 1000, function () {
+                    showMenu(x)
+                });
             }
+        }
 
-            /**
-             * shows the bottom menu elements (el1) in a form of (almost) accordion
-             * while selecting the relevant menu option (el2)
-             */
-            function showElement( el1, el2 ) {
-                if ($(el2).hasClass("selected")) {
-                    showElement('nothing', 'nothing')
-                } else {
-                    $("section.accordion").each(function () {
-                        if ($(this).css("display") !== "none") {
-                            $(this).slideUp(600);
-                        }
-                    });
-                    $(".menu").filter(".selected").removeClass("selected");
-                    $(el1).slideDown(600);
-                    $(el2).addClass("selected");
-                }
+        /**
+         * shows the bottom menu elements (el1) in a form of (almost) accordion
+         * while selecting the relevant menu option (el2)
+         */
+        function showElement(el1, el2) {
+            if ($(el2).hasClass("selected")) {
+                showElement('nothing', 'nothing')
+            } else {
+                $("section.accordion").each(function () {
+                    if ($(this).css("display") !== "none") {
+                        $(this).slideUp(600);
+                    }
+                });
+                $(".menu").filter(".selected").removeClass("selected");
+                $(el1).slideDown(600);
+                $(el2).addClass("selected");
             }
+        }
 
-            (function loop() {
-                var rand = Math.round(Math.random() * 10000) + 5000;
-                setTimeout(function() {
-                        blinkLogo();
-                        loop();
-                }, rand);
-            }());
+        (function loop() {
+            var rand = Math.round(Math.random() * 10000) + 5000;
+            setTimeout(function () {
+                blinkLogo();
+                loop();
+            }, rand);
+        }());
 
-            function blinkLogo() {
-                $( ".logo" ).effect( "pulsate", 500, "show" )
-            }
+        function blinkLogo() {
+            $(".logo").effect("pulsate", 500, "show")
+        }
 
-        </script>
-    </head>
+    </script>
+</head>
 
-    <body>
-<!--        <div id="object" style="background-color: antiquewhite; position: sticky; top: 0px;"></div>-->
-        <div id="main_container">
-            <h1>home of <span class="logo">senemedar</span></h1>
-            <section>
-                <p>Welcome to my home-page, courtesy of <i class="fa fa-github-square fa-lg"></i>GitHub Student Developer Pack (thanks, guys!!)<br>
-                    This is where I teach myself things like <code>HTML</code>, <code>CSS</code>, <code>JS</code>, <code>PHP</code> and few other additional stuff, like <code>jQuery</code> and such.
-                </p>
-                <p>
-                    And this is where I will be putting some of my projects, like <a href="html/cv.html">this CV page</a> for myself, to create a footprint on the Internet (because you have to start somwhere!).
-                </p>
-            </section>
-            <section>
-                <p>
-                    So, a few words about myself:<br>
-                    My name is <span class="logo">Michał</span> , and I am 42 (apparently, it is never too late to start a new things!)
-                </p>
-                <div class="flex-container">
-                    <!-- ####### I love those things ... -->
-                    <div class="flex-content">
-                       I love:
-                        <ul class="fa-ul">
-                            <li class="heart">My wife <span class="logo">Monika</span> and my son <span class="logo">Antoni</span></li>
-                            <li class="heart"><span class="logo">Metaxa</span>, the Greek cognac</li>
-                            <li class="heart">Programming (even though I'm still learning)...</li>
-                            <li class="heart">...on my <a href="https://elementary.io/">Linux</a> laptop</li>
-                            <li class="heart">Playing <a href="https://www.chess.com/member/senemedar">chess</a></li>
-                            <li class="heart">Stephen King's Books</li>
-                            <li class="heart">Music, especially Heavy Metal and Bach. The J. S. one :)</li>
-                        </ul>
-                         ...in that particular order.
-                    </div>
-                    <!-- ####### I like those things ... -->
-                    <div class="flex-content">
-                       I like:
-                        <ul class="fa-ul">
-                            <li class="tick"><span style="text-decoration: line-through">My Mac (although it's getting a bit slugginsh recently)</span>RIP</li>
-                            <li class="tick">Role Playing Games</li>
-                            <li class="tick">My iPhone</li>
-                            <li class="tick"><a href="https://fontawesome.com/">Font Awesome</a> (because it really is awesome!)</li>
-                            <li class="tick"><span style="color: black">BLACK</span> and <span style="color: yellow">YELLOW</span></li>
-                        </ul>
-                         ...in no particular order.
-                    </div>
+<body>
+<div class="main_container">
+    <header>
+        <h1>home of <span class="logo">senemedar</span></h1>
+    </header>
+    <main>
+        <section>
+            <p>Welcome to my home-page, courtesy of <i class="fa fa-github-square fa-lg"></i>GitHub Student Developer
+                Pack (thanks, guys!!)<br>
+                This is where I teach myself things like <code>HTML</code>, <code>CSS</code>, <code>JS</code>,
+                <code>PHP</code> and few other additional stuff, like <code>jQuery</code> and such.
+            </p>
+            <p>
+                And this is where I will be putting some of my projects, like <a href="html/cv.html">this CV page</a>
+                for myself, to create a footprint on the Internet (because you have to start somwhere!).
+            </p>
+        </section>
+        <section>
+            <p>
+                So, a few words about myself:<br>
+                My name is <span class="logo">Michał</span> , and I am 42 (apparently, it is never too late to start a
+                new things!)
+            </p>
+            <div class="flex-container">
+                <!-- ####### I love those things ... -->
+                <div class="flex-content">
+                    I love:
+                    <ul class="fa-ul">
+                        <li class="heart">My wife <span class="logo">Monika</span> and my son <span
+                                class="logo">Antoni</span></li>
+                        <li class="heart"><span class="logo">Metaxa</span>, the Greek cognac</li>
+                        <li class="heart">Programming (even though I'm still learning)...</li>
+                        <li class="heart">...on my <a href="https://elementary.io/">Linux</a> laptop</li>
+                        <li class="heart">Playing <a href="https://www.chess.com/member/senemedar">chess</a></li>
+                        <li class="heart">Stephen King's Books</li>
+                        <li class="heart">Music, especially Heavy Metal and Bach. The J. S. one :)</li>
+                    </ul>
+                    ...in that particular order.
                 </div>
-                <!-- ####### the website -->
-                <div class="flex-container flex-hate">
-                    <!-- ####### I hate those things ... -->
-                    <div class="flex-content">
-                       I hate:
-                        <ul class="fa-ul">
-                            <li class="hate">My BT Broadband, which is supposed to be fibre-optic, and is slower than my iPhone's 4G</li>
-                            <li class="hate">Being late</li>
-                            <li class="hate">Living with my in-laws</li>
-                            <li class="hate">Fact, that I can't find a (programmer/developer)'s job!</li>
-                        </ul>
-                    </div>
+                <!-- ####### I like those things ... -->
+                <div class="flex-content">
+                    I like:
+                    <ul class="fa-ul">
+                        <li class="tick"><span style="text-decoration: line-through">My Mac (although it's getting a bit slugginsh recently)</span>RIP
+                        </li>
+                        <li class="tick">Role Playing Games</li>
+                        <li class="tick">My iPhone</li>
+                        <li class="tick"><a href="https://fontawesome.com/">Font Awesome</a> (because it really is
+                            awesome!)
+                        </li>
+                        <li class="tick"><span style="color: black">BLACK</span> and <span
+                                style="color: yellow">YELLOW</span></li>
+                    </ul>
+                    ...in no particular order.
                 </div>
-            </section>
-
-            <!-- ###### the navigation -->
-            <nav id="top-nav">
-                <ul>
-                    <li class="menu" id="menu-1" onclick="showElement('#aboutMe', '#menu-1')">about me</li>
-                    <li class="menu" id="menu-2" onclick="showElement('#myProjects', '#menu-2')">my projects</li>
-                    <li class="menu" id="menu-3" onclick="showElement('#links', '#menu-3')">links</li>
-                </ul>
-            </nav>
-
-            <!-- ###### the About Me section -->
-            <section id="aboutMe" class="accordion">
-                <p>
-                    I am trying to rekindle my life-long interest in programming, this time backed up by an actual degree in <strong>Software Development</strong> from <a href="http://open.ac.uk">Open University</a>
-                    (Bachelor's Degree - BSc (with honours) in Software Engineering.<br>
-                    My first and forever love was to write software, but - as it usually happens - the life wrote other plans, and I became a Test Engineer. Well...<br>
-                    As for now, I am attending a Boot-camp organised by SDA (Software Development Academy) to remind myself some Java and to learn a few new things!
-                </p>
-                <p>
-                    What I (think I) know at the moment are (...although I am constantly proven wrong!):
-                </p>
-                <ul  class="fa-ul two-columns">
-                    <li class="check">Java</li>
-                    <li class="check">HTML</li>
-                    <li class="check">CSS</li>
-                    <li class="check">JavaScript</li>
-                    <li class="check">jQuery</li>
-                    <li class="check">Python</li>
-                    <li class="check">PHP</li>
-                </ul>
-
-                (<i class="fa fa-times-circle"></i> those I need to refresh, as unused knowledge is often forgotten)<br>
-                Still, those are the thing I'm getting pretty confident in now, but (as always) there's still pretty much to learn on those.<br>
-                I keep writing a little snippets here and there, trying to code in my free time, doing some projects to keep my skills expanding.
-                For now, the list above is my main focus, but the list is not complete, as there is more in line, so I need to keep practising:
-
-                <ul  class="fa-ul">
-                    <li class="book">Hibernate</li>
-                    <li class="book">MySQL and PosgtreSQL</li>
-                    <li class="book">Selenium</li>
-                    <li class="book">Spring</li>
-                </ul>
-                <p>
-                    Those are all the items I have already dabbled in, but there is still a LOT to learn.<br>
-                    But more importantly, I am yet to <strong>finish</strong> any of my little projects, so there is a lot to keep me going.
-                </p>
-                <!-- ### close the panel -->
-                <div class="close"><a onclick="showElement('nothing', 'nothing')">close <i class="fa fa-times-circle"></i> panel</a></div>
-            </section>
-
-            <!-- ###### the My Projects section -->
-            <section id="myProjects" class="accordion">
-                <p>
-                    This is the place, where I shine. My <code>portfolio</code>, if you like.<br>
-                    ...or it will be, as there is not much to shout about, yet. But feel free to poke around, and I can only hope you'll find something of interest.
-                </p>
-                <!-- ####### the website ###### -->
-                <div class="panel-container">
-                    <div class="panel-link">
-                        <i class="fa fa-github-square fa-lg"></i>
-                        <a href="https://github.com/senemedar/senemedar.github.io">this very website</a>
-                    </div>
-                    <div class="panel-insert"><i class="fa fa-cogs"></i></div>
-                    <div class="panel-description">
-                        Which is as much about showing off, as about learning stuff. The <span class="logo">stuff</span> is in this case:
-                        <code>HTML5</code>,<code> CSS3</code>,<code> jQuery</code> and<code> JS</code>. And a bit about colours, and what I like and dis-like...
-                    </div>
+            </div>
+            <!-- ####### the website -->
+            <div class="flex-container flex-hate">
+                <!-- ####### I hate those things ... -->
+                <div class="flex-content">
+                    I hate:
+                    <ul class="fa-ul">
+                        <li class="hate">My BT Broadband, which is supposed to be fibre-optic, and is slower than my
+                            iPhone's 4G
+                        </li>
+                        <li class="hate">Being late</li>
+                        <li class="hate">Living with my in-laws</li>
+                        <li class="hate">Fact, that I can't find a (programmer/developer)'s job!</li>
+                    </ul>
                 </div>
-                <hr>
-                <!-- ####### home budget ###### -->
-                <div class="panel-container">
-                    <div class="panel-link">
-                        <i class="fa fa-github-square fa-lg"></i>
-                        <a href="https://github.com/senemedar/HomeBudget">home budget</a>
-                    </div>
-                    <div class="panel-insert"><i class="fa fa-cogs"></i></div>
-                    <div class="panel-description">
-                        A little project created for myself, to help manage my home budget. PostgreSQL database version.<br>
-                        Coded in <code>HTML/CSS/PHP</code>. Still learning.
-                    </div>
+            </div>
+        </section>
+
+        <!-- ###### the navigation -->
+        <nav class="top-nav">
+            <ul>
+                <li class="menu menu-1" onclick="showElement('.aboutMe', '.menu-1')">about me</li>
+                <li class="menu menu-2" onclick="showElement('.projects', '.menu-2')">my projects</li>
+                <li class="menu menu-3" onclick="showElement('.links', '.menu-3')">links</li>
+            </ul>
+        </nav>
+
+        <!-- ###### the About Me section -->
+        <section class="aboutMe accordion">
+            <p>
+                I am trying to rekindle my life-long interest in programming, this time backed up by an actual degree in
+                <strong>Software Development</strong> from <a href="http://open.ac.uk">Open University</a>
+                (Bachelor's Degree - BSc (with honours) in Software Engineering.<br>
+                My first and forever love was to write software, but - as it usually happens - the life wrote other
+                plans, and I became a Test Engineer. Well...<br>
+                As for now, I am attending a Boot-camp organised by SDA (Software Development Academy) to remind myself
+                some Java and to learn a few new things!
+            </p>
+            <p>
+                What I (think I) know at the moment are (...although I am constantly proven wrong!):
+            </p>
+            <ul class="fa-ul two-columns">
+                <li class="check">Java</li>
+                <li class="check">HTML</li>
+                <li class="check">CSS</li>
+                <li class="check">JavaScript</li>
+                <li class="check">jQuery</li>
+                <li class="check">Python</li>
+                <li class="not-check">PHP</li>
+            </ul>
+
+            (<i class="fa fa-times-circle"></i> means, that I need to refresh this, as unused knowledge is often forgotten)<br>
+            Still, those are the thing I'm getting pretty confident in now, but (as always) there's still pretty much to
+            learn on those.<br>
+            I keep writing a little snippets here and there, trying to code in my free time, doing some projects to keep
+            my skills expanding.
+            For now, the list above is my main focus, but the list is not complete, as there is more in line, so I need
+            to keep practising:
+
+            <ul class="fa-ul">
+                <li class="book">Hibernate</li>
+                <li class="book">MySQL and PosgtreSQL</li>
+                <li class="book">Selenium</li>
+                <li class="book">Spring</li>
+            </ul>
+            <p>
+                Those are all the items I have already dabbled in, but there is still a LOT to learn.<br>
+                But more importantly, I am yet to <strong>finish</strong> any of my little projects, so there is a lot
+                to keep me going.
+            </p>
+            <!-- ### close the panel -->
+            <div class="close"><a onclick="showElement('nothing', 'nothing')">close <i class="fa fa-times-circle"></i>
+                panel</a></div>
+        </section>
+
+        <!-- ###### the My Projects section -->
+        <section class="projects accordion">
+            <p>
+                This is the place, where I shine. My <code>portfolio</code>, if you like.<br>
+                ...or it will be, as there is not much to shout about, yet. But feel free to poke around, and I can only
+                hope you'll find something of interest.
+            </p>
+            <!-- ####### the website ###### -->
+            <div class="panel-container">
+                <div class="panel-insert"><i class="fa fa-cogs"></i></div>
+                <div class="panel-link">
+                    <i class="fa fa-github-square fa-lg"></i>
+                    <a href="https://github.com/senemedar/senemedar.github.io">this very website</a>
                 </div>
-                <!-- ### close the panel -->
-                <div class="close"><a onclick="showElement('nothing', 'nothing')">close <i class="fa fa-times-circle"></i> panel</a></div>
-            </section>
-
-            <!-- ###### the Links section -->
-            <section id="links" class="accordion">
-                <p>
-                    Places on the internet related to me, and places I find interesting:
-                </p>
-
-                <div class="panel-container">
-                    <div class="panel-link">
-                        <a href="https://github.com/senemedar/">My GitHub place</a>
-                    </div>
-                    <div class="panel-insert"><i class="fa fa-github-square fa-lg"></i></div>
-                    <div class="panel-description">
-                        Repository for all my projects big and small - even the ones that are not listed here.
-                    </div>
+                <div class="panel-description">
+                    Which is as much about showing off, as about learning stuff. The <span class="logo">stuff</span> is
+                    in this case:
+                    <code>HTML5</code>,<code> CSS3</code>,<code> jQuery</code> and<code> JS</code>. And a bit about
+                    colours, and what I like and dis-like...
                 </div>
-
-                <div class="panel-container">
-                    <div class="panel-link">
-                        <a href="https://www.linkedin.com/in/mpielacha/">My LinkedIn profile</a>
-                    </div>
-                    <div class="panel-insert"><i class="fa fa-linkedin-square fa-lg"></i></div>
-                    <div class="panel-description">
-                        LinkedIn pages for myself. I try my best to keep them updated.
-                    </div>
+            </div>
+            <hr>
+            <!-- ####### home budget ###### -->
+            <div class="panel-container">
+                <div class="panel-insert"><i class="fa fa-cogs"></i></div>
+                <div class="panel-link">
+                    <i class="fa fa-github-square fa-lg"></i>
+                    <a href="https://github.com/senemedar/HomeBudget">home budget</a>
                 </div>
-
-                <div class="panel-container">
-                    <div class="panel-link">
-                        <a href="https://programistaniespelniony.wordpress.com/">My personal blog</a>
-                    </div>
-                    <div class="panel-insert"><i class="fa fa-wordpress fa-lg"></i></div>
-                    <div class="panel-description">
-                        WordPress pages where I try to write about the programming-related topics. Or Linux. Or both...
-                    </div>
+                <div class="panel-description">
+                    A little project created for myself, to help manage my home budget. PostgreSQL database version.<br>
+                    Coded in <code>HTML/CSS/PHP</code>. Still learning.
                 </div>
+            </div>
+            <!-- ### close the panel -->
+            <div class="close"><a onclick="showElement('nothing', 'nothing')">close <i class="fa fa-times-circle"></i>
+                panel</a></div>
+        </section>
 
-                <!-- ### close the panel -->
-                <div class="close"><a onclick="showElement('nothing', 'nothing')">close <i class="fa fa-times-circle"></i> panel</a></div>
-            </section>
+        <!-- ###### the Links section -->
+        <section class="links accordion">
+            <p>
+                Places on the internet related to me, and places I find interesting:
+            </p>
 
-            <!-- ###### the end section -->
-            <section>
-                <p>
-                    So, that's about that now. Let's get <code>coding</code>
-                </p>
-            </section>
+            <div class="panel-container">
+                <div class="panel-insert"><i class="fa fa-github-square fa-lg"></i></div>
+                <div class="panel-link">
+                    <a href="https://github.com/senemedar/">My GitHub place</a>
+                </div>
+                <div class="panel-description">
+                    Repository for all my projects big and small - even the ones that are not listed here.
+                </div>
+            </div>
+            <hr>
+            <div class="panel-container">
+                <div class="panel-insert"><i class="fa fa-linkedin-square fa-lg"></i></div>
+                <div class="panel-link">
+                    <a href="https://www.linkedin.com/in/mpielacha/">My LinkedIn profile</a>
+                </div>
+                <div class="panel-description">
+                    LinkedIn pages for myself. I try my best to keep them updated.
+                </div>
+            </div>
+            <hr>
+            <div class="panel-container">
+                <div class="panel-insert"><i class="fa fa-wordpress fa-lg"></i></div>
+                <div class="panel-link">
+                    <a href="https://programistaniespelniony.wordpress.com/">My personal blog</a>
+                </div>
+                <div class="panel-description">
+                    WordPress pages where I try to write about the programming-related topics. Or Linux. Or both...
+                </div>
+            </div>
+
+            <!-- ### close the panel -->
+            <div class="close"><a onclick="showElement('nothing', 'nothing')">close <i class="fa fa-times-circle"></i>
+                panel</a></div>
+        </section>
+
+        <!-- ###### the end section -->
+        <section>
+            <p>
+                So, that's about that now. Let's get <code>coding</code>
+            </p>
+        </section>
+    </main>
 
 
-
-        <!-- ###### the footer -->
-        <footer>
-            copyright &copy;<span class="logo">senemedar</span> 2017 - 2021
-        </footer>
-        </div>
-    </body>
+    <!-- ###### the footer -->
+    <footer>
+        copyright &copy;<span class="logo">senemedar</span> 2017 - 2021
+    </footer>
+</div>
+</body>
 </html>
