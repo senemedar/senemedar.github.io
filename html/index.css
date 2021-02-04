@@ -2,7 +2,7 @@ body {
     background-color: lightgray;
 }
 
-div#main_container {
+div.main_container {
     width: 55%;
     margin: auto;
     text-align: justify;
@@ -14,12 +14,14 @@ div#main_container {
 
 div.panel-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 div.panel-link {
     width: 200px;
     align-self: center;
-    text-align: right
+    text-align: center;
 }
 
 div.panel-insert {
@@ -114,10 +116,11 @@ div.flex-container {
     padding: 5px;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 div.flex-content {
-    width: 50%;
+    /*width: 50%;*/
 }
 
 div.flex-hate {
@@ -136,13 +139,22 @@ span.logo {
     color: black;
 }
 
-nav#top-nav {
+nav.top-nav {
     text-align: center;
     background-color: antiquewhite;
 }
 
 ul {
     list-style: none;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li {
+    flex-grow: 1;
 }
 
 li {
@@ -155,8 +167,7 @@ li.menu {
     margin: 0 20px;
     opacity: 0;
     text-decoration: underline;
-        transition-duration: 0.7s;
-/*    visibility: hidden;*/
+    transition-duration: 0.7s;
 }
 
 li.menu:hover {
@@ -175,7 +186,6 @@ hr {
 }
 
 footer {
-    /*padding-top: 25px;*/
     text-align: right;
     background-color: antiquewhite;
 }
@@ -210,5 +220,24 @@ footer {
 }
 
 .two-columns {
-    column-count: 2
+    column-count: 1
+}
+
+@media screen and (min-width: 768px) {
+    div.panel-container {
+        align-content: center;
+    }
+
+    div.flex-container, nav ul {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    div.flex-content {
+        width: 50%;
+    }
+
+    .two-columns {
+        column-count: 2;
+    }
 }
